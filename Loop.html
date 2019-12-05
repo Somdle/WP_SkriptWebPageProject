@@ -1,0 +1,91 @@
+<!-- HTML 홈페이지 만들기 프로젝트 Loop -->
+<!DOCTYPE html>
+
+<!-- 헤더 -->
+<head>
+	<title> Skript 반복문 </title>
+	<meta charset="UTF-8"></meta>
+	<link type = "text/css" rel="stylesheet" href="MainCss.css"></link>
+	<script src="MainJs.js"></script>
+</head>
+
+<!-- 메인페이지 내용 -->
+<body class="blackTheme_target">
+	<header> <!-- 메인페이지 스크립트 제목 및 이동란 -->
+		<h1><center> Skript 반복문 페이지 </center></h1>
+		<div><center>
+			<span><a class="blackTheme_target" href="Main.html"> 메인 </a></span> | 
+			<span><a class="blackTheme_target" href="Event.html"> 이벤트 </a></span> | 
+			<span><a class="blackTheme_target" href="Condition.html"> 상태 </a></span> | 
+			<span><a class="blackTheme_target" href="Effect.html"> 효과 </a></span> | 
+			<span><a class="blackTheme_target" href="Loop.html"> 반복문 </a></span> | 
+			<span><a class="blackTheme_target" href="CustomCommand.html"> 명령어 커스텀 </a></span> | 
+			<span><a class="blackTheme_target" href="Type.html"> 타입 </a></span> | 
+			<span><a class="blackTheme_target" href="Variable.html"> 변수 </a></span> | 
+			<input type="button" value="색 변경" onclick="colorChange()">
+		</center></div>
+	</header>
+	<nav> <!-- 루프페이지 스크립트 이동란 -->
+		<h2><center> 리스트 </center></h2>
+		<ul>
+			<li><a class="blackTheme_target" href="#basicloop"> 일반 루프 </a></li>
+			<li><a class="blackTheme_target" href="#loopvalue"> 루프 가능한 값 </a></li>
+			<li><a class="blackTheme_target" href="#listloop"> 리스트 루프(변수) </a></li>
+			<li><a class="blackTheme_target" href="#whileloop"> While 루프 </a></li>
+		</ul>
+		<img class="skriptImg" src="skript.png">
+	</nav>
+	<section>
+		<header><p id="basicloop"><h3> 일반적인 루프는 아래와 같다 </h3></p></header>
+		<article>
+			<p>1.&nbsp loop 5 times: </p>
+			<p>2.&nbsp &nbsp if loop-value is "ABC" or "DEF": </p>
+			<p>3. &nbsp &nbsp &nbsp message "루프값 : %loop-value%" </p>
+			<p>루프는 여러 값에 대해 코드를 반복하는 구문이다.</p>
+			<p> 루프는 주어진 표현식의 모든 요소를 반복할 수 있다.(Ex: All players, worlds, items 등)
+				루프 내부의 조건과 효과는 모든 요소에 대해 실행되며 'loop-내용'을 통해 액세스 할 수 있다.
+				루프 내부의 조건이 충족되지 않으면 루프는 다음 루프요소를 시작한다. 그러나 stop loop 를 사용해 루프를 완전히 종료하고 코드실행을 계속 할 수 있다.
+			</p>
+			<p>간단한 루프는 루프 표현식을 포함해 단일 조건이나 효과로 대체할 수 있다. (Ex. 모든플레이어를 루프해 아이템을 제공 을 모든플레이어에게 아이템을 제공)
+			<p>1. &nbsp loop all players:</p>
+			<p>2. &nbsp &nbsp give 64 of dirt to loop-player
+			<p>2. &nbsp &nbsp message "%player%님이 아이템을 배포" to loop-player</p>
+			<p> 이 구문을 아래처럼 간단히 만들 수 있다. </p>
+			<p>1. &nbsp give 64 dirt to all players </p>
+		</article>
+	</section>
+	<section>
+		<header><p id="loopvalue"><h3> 루프가 가능한 값 </h3></p></header>
+		<article>
+			<p> 둘 이상의 값을 나타내는 모든 표현식 (Ex. 목록변수, All players, worlds 등)</p>
+		</article>
+	</section>
+	<section>
+		<header><a id="listloop"><h3> 리스트 변수 </h3></p></header>
+		<article>
+			<p>리스트 변수를 루프시킬 때 루프하는 value 대신에 루프 index를 사용할 수 있다. 
+				loop-value 는 현재 루프된 변수의 값이며 loop-index는 변수 이름의 마지막 부분 (Ex. {Temp::*} 에서 *부분)
+				아래의 루프는 value 값을 1 씩 증가시키는 예제이다.
+			</p>
+		</article>
+		<footer>
+			<p>1.&nbsp loop {var::*}:</p>
+			<p>2.&nbsp &nbsp set {var::%loop-index%} to loop-value + 1</p>
+		</footer>
+	</section>
+	<section>
+		<header><a id="whileloop"><h3> While 루프 </h3></a></header>
+		<article> 2.0 버전부터 while루프, 즉 조건이 충족될 경우 계속 반복하는 루프를 사용할 수 있으며 다음과 같다. </article>
+		<footer>
+			<p>1. &nbsp while condition:</p>
+			<p>2. &nbsp &nbsp code </p>
+			<p> while루프를 사용할 때에는 매우 조심히 사용해야 한다.
+				while루프는 특정 조건을 만족하면 계속 실행되기 때문에 잘 못 다룰 경우 서버성능에 치명적인 영향을 줄 수 있다.
+			</p>
+		<footer>
+	</section>
+	<footer class="creater">
+		<p>만든사람 1961035 이규석</p>
+		<a href="#top" class="top"> 맨 위로 </a>
+	</footer>
+</body>

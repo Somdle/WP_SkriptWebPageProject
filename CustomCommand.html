@@ -1,0 +1,90 @@
+<!-- HTML 홈페이지 만들기 프로젝트 customcommand -->
+<!DOCTYPE html>
+
+<!-- 헤더 -->
+<head>
+	<title> Skript Customcommand </title>
+	<meta charset="UTF-8"></meta>
+	<link type = "text/css" rel="stylesheet" href="MainCss.css"></link>
+	<script src="MainJs.js"></script>
+</head>
+
+<!-- 메인페이지 내용 -->
+<body class="blackTheme_target">
+	<header> <!-- 메인페이지 스크립트 제목 및 이동란 -->
+		<h1><center> Skript 명령어 커스텀 페이지 </center></h1>
+		<div><center>
+			<span><a class="blackTheme_target" href="Main.html"> 메인 </a></span> | 
+			<span><a class="blackTheme_target" href="Event.html"> 이벤트 </a></span> | 
+			<span><a class="blackTheme_target" href="Condition.html"> 상태 </a></span> | 
+			<span><a class="blackTheme_target" href="Effect.html"> 효과 </a></span> | 
+			<span><a class="blackTheme_target" href="Loop.html"> 반복문 </a></span> | 
+			<span><a class="blackTheme_target" href="CustomCommand.html"> 명령어 커스텀 </a></span> | 
+			<span><a class="blackTheme_target" href="Type.html"> 타입 </a></span> | 
+			<span><a class="blackTheme_target" href="Variable.html"> 변수 </a></span> | 
+			<input type="button" value="색 변경" onclick="colorChange()">
+		</center></div>
+	</header>
+	<nav> <!-- 명령어 커스텀 페이지 스크립트 이동란 -->
+		<h2><center> 리스트 </center></h2>
+		<ul>
+			<li><a class="blackTheme_target" href="#command"> 명령어의 구성 </a></li>
+			<li><a class="blackTheme_target" href="#place holder"> Place Holder </a></li>
+			<li><a class="blackTheme_target" href="#argument"> Argument </a></li>
+		</ul>
+		<img class="skriptImg" src="skript.png">
+	</nav>
+	<section id="command">
+		<header><h3>명령어의 구성</h3></header>
+		<article>
+			<p>1. command 명령어 &lt내용 1&gt [&lt내용 2&gt]:</p>
+			<p>2. &nbsp usage: 명령어의 사용법</p>
+			<p>3. &nbsp permission: 명령어 펄미션</p>
+			<p>4. &nbsp permisison message: 펄미션 권한이 없을경우 나오는 메세지</p>
+			<p>5. &nbsp executable by: player/console</p>
+			<p>6. &nbsp aliases: /command1</p>
+			<p>7. &nbsp trigger:</p>
+			<p>8. &nbsp &nbsp 실행될 코드</p>
+		</article>
+		<footer>
+			<p>1번에서 command는 명령어를 만들 때 사용한다. 명령어는 서버에서 사용될 명령어를 적는 곳이다.
+				&lt와&gt로 묶인곳은 필수로 적어야할 공간에 사용한다. [&lt와&gt]로 묶인곳은 선택적으로 적어야할 공간에 사용한다.
+				&lt와&gt, [&lt와&gt]를 사용해서 추가적으로 더 늘릴 수 있다.
+			</p>
+			<p>
+				6번은 추가적으로 사용할 명령어를 적는 곳이며 보통 단축명령어를 적는다.
+			</p>
+			<p>
+				1번과 7번은 필수이며 1번~6번은 필수가 아니다. 또한 8번에 실행될 코드를 적어넣는다.
+			</p>
+		</footer>
+	</section>
+	<section id="place holder">
+		<header><h3>Place Holder</h3></header>
+		<article>
+			<p>위의 명령어의 구성에서 내용 1과 내용 2에는 명령어를 받을 타입을 넣는곳이다.</p>
+		</article>
+		<footer>
+			<p>명령어를 받을 타입에는 item, player등이 있다.</p>
+			<h4>사용예</h4>
+			<p>command banplayer &ltplayer&gt [&lttext&gt]:</p>
+			<p>command /give &ltitems&gt to &ltplayer&gt:</p>
+		</footer>
+	</section>
+	<section id="argument">
+		<header><h3>Argument</h3></header>
+		<article>
+			<p>명령어에서 적은 내용을 불러오려면 arg 를 사용하면 된다.</p>
+		</article>
+		<footer>
+			<h4>사용예</h4>
+			<p>if arg-1 is stick or dirt:</p>
+			<p>if arg-5 is "전송":</p>
+			<p>if arg-1 is not arg-2:</p>
+		</footer>
+	</section>
+	<footer class="creater">
+		<p>만든사람 1961035 이규석</p>
+		<a href="#top" class="top"> 맨 위로 </a>
+	</footer>
+</body>

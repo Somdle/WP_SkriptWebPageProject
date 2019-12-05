@@ -1,0 +1,244 @@
+<!-- HTML 홈페이지 만들기 프로젝트 type -->
+<!DOCTYPE html>
+
+<!-- 헤더 -->
+<head>
+	<title> Skript Type </title>
+	<meta charset="UTF-8"></meta>
+	<link type = "text/css" rel="stylesheet" href="MainCss.css"></link>
+	<script src="MainJs.js"></script>
+</head>
+
+<!-- 메인페이지 내용 -->
+<body class="blackTheme_target">
+	<header> <!-- 메인페이지 스크립트 제목 및 이동란 -->
+		<h1><center> Skript 타입 페이지 </center></h1>
+		<div><center>
+			<span><a class="blackTheme_target" href="Main.html"> 메인 </a></span> | 
+			<span><a class="blackTheme_target" href="Event.html"> 이벤트 </a></span> | 
+			<span><a class="blackTheme_target" href="Condition.html"> 상태 </a></span> | 
+			<span><a class="blackTheme_target" href="Effect.html"> 효과 </a></span> | 
+			<span><a class="blackTheme_target" href="Loop.html"> 반복문 </a></span> | 
+			<span><a class="blackTheme_target" href="CustomCommand.html"> 명령어 커스텀 </a></span> | 
+			<span><a class="blackTheme_target" href="Type.html"> 타입 </a></span> | 
+			<span><a class="blackTheme_target" href="Variable.html"> 변수 </a></span> | 
+			<input type="button" value="색 변경" onclick="colorChange()">
+		</center></div>
+	</header>
+	<nav> <!-- 타입 페이지 스크립트 이동란 -->
+		<h2><center> 리스트 </center></h2>
+		<ul>
+			<li><a class="blackTheme_target" href="#biome"> Biome </a></li>
+			<li><a class="blackTheme_target" href="#block"> Block </a></li>
+			<li><a class="blackTheme_target" href="#date"> Date </a></li>
+			<li><a class="blackTheme_target" href="#game mode"> Game Mode </a></li>
+			<li><a class="blackTheme_target" href="#item"> Item </a></li>
+			<li><a class="blackTheme_target" href="#location"> Location </a></li>
+			<li><a class="blackTheme_target" href="#text"> Text </a></li>
+			<li><a class="blackTheme_target" href="#world"> wolrd </a></li>
+		</ul>
+		<img class="skriptImg" src="skript.png">
+	</nav>
+	<section>
+		<header><h3 id="biome"> Biome <h3></header>
+		<article>
+			<span>
+				<table border="1">
+					<tr>
+						<td>사용예</td>
+						<td> biome[s]</td>
+					</tr>
+					<tr>
+						<td>버전</td>
+						<td>1.4.4</td>
+					</tr>
+				</table>
+			</span>
+			<span>
+				월드의 바이옴을 알아낼 때 사용(바이옴 = 지형)
+			</span>
+		</article>
+		<footer>
+			<p>예시</p>
+			<p>biome at the player is desert</p>
+			<p>player's biome is desert</p>
+		</footer>
+	</section>
+	<section>
+		<header><h3 id="block"> Block <h3></header>
+		<article>
+			<span>
+				<table border="1">
+					<tr>
+						<td>사용예</td>
+						<td> block[s]</td>
+					</tr>
+					<tr>
+						<td>버전</td>
+						<td>1.0</td>
+					</tr>
+				</table>
+			</span>
+			<span>
+				월드의 블럭 위치와 유형이 있으며 방향, 인벤토리등의 특수속성을 가지기도 한다.
+			</span>
+		</article>
+		<footer>
+			<p>예시</p>
+			<p>event-block</p>
+		</footer>
+	</section>
+	<section>
+		<header><h3 id="date"> Date <h3></header>
+		<article>
+			<span>
+				<table border="1">
+					<tr>
+						<td>사용예</td>
+						<td> date[s]</td>
+					</tr>
+					<tr>
+						<td>버전</td>
+						<td>1.4</td>
+					</tr>
+				</table>
+			</span>
+			<span>
+				게임내부의 날이아닌 현실의 날짜를 기준으로 한다.
+			</span>
+		</article>
+		<footer>
+			<p>예시</p>
+			<p>set {_temp} to now</p>
+			<p>subtract a day form {_temp}</p>
+		</footer>
+	</section>
+	<section>
+		<header><h3 id="game mode"> Game Mode <h3></header>
+		<article>
+			<span>
+				<table border="1">
+					<tr>
+						<td>사용예</td>
+						<td> game[ ]mode[s]</td>
+					</tr>
+					<tr>
+						<td>버전</td>
+						<td>1.0</td>
+					</tr>
+				</table>
+			</span>
+			<span>
+				게임모드에는 survival, creative, adventure 가 있다.
+			</span>
+		</article>
+		<footer>
+			<p>예시</p>
+			<p>player's gamemode is survival</p>
+			<p>set the player argument's game mode to creative</p>
+		</footer>
+	</section>
+	<section>
+		<header><h3 id="item"> Item/Material <h3></header>
+		<article>
+			<span>
+				<table border="1">
+					<tr>
+						<td>사용예</td>
+						<td> item
+							<p/>material</td>
+					</tr>
+					<tr>
+						<td>버전</td>
+						<td>1.0</td>
+					</tr>
+				</table>
+			</span>
+			<span>
+				아이템
+			</span>
+		</article>
+		<footer>
+			<p>예시</p>
+			<p>set {_item} to type of the targeted block</p>
+			<p>{_item} is a torch</p>
+		</footer>
+	</section>
+	<section>
+		<header><h3 id="location"> Location <h3></header>
+		<article>
+			<span>
+				<table border="1">
+					<tr>
+						<td>사용예</td>
+						<td>location[s]</td>
+					</tr>
+					<tr>
+						<td>버전</td>
+						<td>1.0</td>
+					</tr>
+				</table>
+			</span>
+			<span>
+				월드 내부의 위치 location 에는 월드, 좌표, 보는방향 이 저장된다.
+			</span>
+		</article>
+		<footer>
+			<p>예시</p>
+			<p>event-location</p>
+			<p>location of player</p>
+		</footer>
+	</section>
+	<section>
+		<header><h3 id="text"> Text <h3></header>
+		<article>
+			<span>
+				<table border="1">
+					<tr>
+						<td>사용예</td>
+						<td>(text|string)[s]</td>
+					</tr>
+					<tr>
+						<td>버전</td>
+						<td>1.0</td>
+					</tr>
+				</table>
+			</span>
+			<span>
+				텍스트로 사용하려면 큰따옴표("")로 묶어주면 된다.
+			</span>
+		</article>
+		<footer>
+			<p>예시</p>
+			<p>broadcast "Hello World!"</p>
+			<p>message "The id of ""%type of tool%"" is %id of tool%."</p>
+		</footer>
+	</section>
+	<section>
+		<header><h3 id="world"> World <h3></header>
+		<article>
+			<span>
+				<table border="1">
+					<tr>
+						<td>world[s]</td>
+					</tr>
+					<tr>
+						<td>버전</td>
+						<td>1.0</td>
+					</tr>
+				</table>
+			</span>
+			<span>
+				서버내의 월드를 나타낸다
+			</span>
+		</article>
+		<footer>
+			<p>예시</p>
+			<p>broadcast "Hello!" to "world_nether"</p>
+		</footer>
+	</section>
+	<footer class="creater">
+		<p>만든사람 1961035 이규석</p>
+		<a href="#top" class="top"> 맨 위로 </a>
+	</footer>
+</body>
