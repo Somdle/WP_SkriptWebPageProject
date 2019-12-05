@@ -1,0 +1,390 @@
+<!-- HTML 홈페이지 만들기 프로젝트 Condition -->
+<!DOCTYPE html>
+
+<!-- 헤더 -->
+<head>
+	<title> Skript Condition </title>
+	<meta charset="UTF-8"></meta>
+	<link type = "text/css" rel="stylesheet" href="MainCss.css"></link>
+	<script src="MainJs.js"></script>
+</head>
+
+<!-- 메인페이지 내용 -->
+<body class="blackTheme_target">
+	<header> <!-- 메인페이지 스크립트 제목 및 이동란 -->
+		<h1><center> Skript 상태 페이지 </center></h1>
+		<div><center>
+			<span><a class="blackTheme_target" href="Main.html"> 메인 </a></span> | 
+			<span><a class="blackTheme_target" href="Event.html"> 이벤트 </a></span> | 
+			<span><a class="blackTheme_target" href="Condition.html"> 상태 </a></span> | 
+			<span><a class="blackTheme_target" href="Effect.html"> 효과 </a></span> | 
+			<span><a class="blackTheme_target" href="Loop.html"> 반복문 </a></span> | 
+			<span><a class="blackTheme_target" href="CustomCommand.html"> 명령어 커스텀 </a></span> | 
+			<span><a class="blackTheme_target" href="Type.html"> 타입 </a></span> | 
+			<span><a class="blackTheme_target" href="Variable.html"> 변수 </a></span> | 
+			<input type="button" value="색 변경" onclick="colorChange()">
+		</center></div>
+	</header>
+	<nav> <!-- @@@페이지 스크립트 이동란 -->
+		<h2><center> 리스트 </center></h2>
+		<ul>
+			<li><a class="blackTheme_target" href="#can hold"> Can Hold </a></li>
+			<li><a class="blackTheme_target" href="#chance"> Chance </a></li>
+			<li><a class="blackTheme_target" href="#contains"> Contains </a></li>
+			<li><a class="blackTheme_target" href="#damage cause"> Damage Cause </a></li>
+			<li><a class="blackTheme_target" href="#is alive"> Is Alive </a></li>
+			<li><a class="blackTheme_target" href="#is banned"> Is Banned </a></li>
+			<li><a class="blackTheme_target" href="#is holding"> Is Holding </a></li>
+			<li><a class="blackTheme_target" href="#is in world"> Is In World </a></li>
+			<li><a class="blackTheme_target" href="#is on line"> Is Online </a></li>
+			<li><a class="blackTheme_target" href="#is sneaking"> Is Sneaking </a></li>
+			<li><a class="blackTheme_target" href="#pvp"> PVP </a></li>
+			<li><a class="blackTheme_target" href="#time"> Time </a></li>
+		</ul>
+		<img class="skriptImg" src="skript.png">
+	</nav>
+	<section>
+		<header><h3 id="can hold"> Can Hold <h3></header>
+		<article>
+			<span>
+				<table border="1">
+					<tr>
+						<td>사용예</td>
+						<td> %inventories% (can hold|ha(s|ve) [enough] space (for|to hold)) %item types% 
+							<p/> %inventories% (can(no|')t hold|(ha(s|ve) not|ha(s|ve)n't|do[es]n't have) [enough] space (for|to hold)) %item types% 
+						</td>
+					</tr>
+					<tr>
+						<td>버전</td>
+						<td>1.0</td>
+					</tr>
+				</table>
+			</span>
+			<span>
+				플레이어가 특정 아이템을 가지고 있을 경우
+			</span>
+		</article>
+		<footer>
+			<p>예시</p>
+			<p>block can hold 200 cobblestone</p>
+			<p>player has enough space for 64 feathers</p>
+		</footer>
+	</section>
+	<section>
+		<header><h3 id="chance"> Chance <h3></header>
+		<article>
+			<span>
+				<table border="1">
+					<tr>
+						<td>사용예</td>
+						<td> chance of %number%[\%]</td>
+					</tr>
+					<tr>
+						<td>버전</td>
+						<td>1.0</td>
+					</tr>
+				</table>
+			</span>
+			<span>
+				0% ~ 100%확률 로 작동
+			</span>
+		</article>
+		<footer>
+			<p>예시</p>
+			<p>chance of 50%</p>
+			<p>chance of {변수}%</p>
+		</footer>
+	</section>
+	<section>
+		<header><h3 id="contains"> Contains <h3></header>
+		<article>
+			<span>
+				<table border="1">
+					<tr>
+						<td>사용예</td>
+						<td> %inventories% ha(s|ve) %item types% [in [(the[ir]|his|her|its)] inventory]
+							<p/>%inventories/texts/objects% contain[s] %item types/texts/objects%
+							<p/>%inventories% do[es](n't| not) have %item types% [in [(the[ir]|his|her|its)] inventory]
+							<p/>%inventories/texts/objects% do[es](n't| not) contain %item types/texts/objects%
+						</td>
+					</tr>
+					<tr>
+						<td>버전</td>
+						<td>1.0</td>
+					</tr>
+				</table>
+			</span>
+			<span>
+				A가 B를 포함하고 있을 경우
+			</span>
+		</article>
+		<footer>
+			<p>예시</p>
+			<p>block contains 20 cobblestone</p>
+			<p>player has 4 flint and 2 iron ingots</p>
+		</footer>
+	</section>
+	<section>
+		<header><h3 id="damage cause"> Damage Cause <h3></header>
+		<article>
+			<span>
+				<table border="1">
+					<tr>
+						<td>사용예</td>
+						<td> [the] damage [(n('|o)]t) [been] (caused|done|made) by %damage cause%</td>
+					</tr>
+					<tr>
+						<td>버전</td>
+						<td>2.0</td>
+					</tr>
+				</table>
+			</span>
+			<span>
+				데미지를 입은 이유
+			</span>
+		</article>
+		<footer>
+			<p>예시</p>
+			<p>on damage:<p>
+			<p>&nbsp amage was caused by lava, fire or burning</p>
+			<p>&nbsp victim is a player</p>
+			<p>&nbsp victim has a potion of fire resistance</p>
+			<p>&nbsp cancel event</p>
+			<p>&nbsp remove 1 potion of fire resistance from the victim</p>
+		</footer>
+	</section>
+	<section>
+		<header><h3 id="is alive"> Is Alive <h3></header>
+		<article>
+			<span>
+				<table border="1">
+					<tr>
+						<td>사용예</td>
+						<td> %living entities% (alive|dead)
+							<p/>%living entities% (alive|dead)
+						</td>
+					</tr>
+					<tr>
+						<td>버전</td>
+						<td>2.0</td>
+					</tr>
+				</table>
+			</span>
+			<span>
+				플레이어가 살아 있는지 죽어있는지
+			</span>
+		</article>
+		<footer>
+			<p>예시</p>
+			<p>{villagerbuddy.%player%} is dead</p>
+			<p>player is alive</p>
+		</footer>
+	</section>
+	<section>
+		<header><h3 id="is banned"> Is Banned <h3></header>
+		<article>
+			<span>
+				<table border="1">
+					<tr>
+						<td>사용예</td>
+						<td> %offline players/texts% (is|are) banned
+							<p/>%players/texts% [(is|are) IP(-| )]banned
+							<p/>%offline players/texts% (isn't|is not|aren't|are not) banned
+							<p/>%players/texts% [(isn't|is not|aren't|are not) IP(-| )]banned
+						</td>
+					</tr>
+					<tr>
+						<td>버전</td>
+						<td>1.4</td>
+					</tr>
+				</table>
+			</span>
+			<span>
+				플레이어가 서버에서 밴이 되어있는지
+			</span>
+		</article>
+		<footer>
+			<p>예시</p>
+			<p>player is banned</p>
+			<p>victim is not IP-banned</p>
+			<p>"127.0.0.1" is banned</p>
+		</footer>
+	</section>
+	<section>
+		<header><h3 id="is holding"> Is Holding <h3></header>
+		<article>
+			<span>
+				<table border="1">
+					<tr>
+						<td>사용예</td>
+						<td> [%living entities%] ha(s|ve) %item types% in hand
+							<p/>[%living entities%] (is|are) holding %item types%
+							<p/>[%living entities%] (ha(s|ve) not|do[es]n't have) %item types% in hand
+							<p/>[%living entities%] (is not|isn't) holding %item types%
+						</td>
+					</tr>
+					<tr>
+						<td>버전</td>
+						<td>1.0</td>
+					</tr>
+				</table>
+			</span>
+			<span>
+				플레이어가 특정 아이템을 가지고 있는지
+			</span>
+		</article>
+		<footer>
+			<p>예시</p>
+			<p>player is holding a stick</p>
+			<p>victim isn't holding a sword of sharpness</p>
+		</footer>
+	</section>
+	<section>
+		<header><h3 id="is in world"> Is In world <h3></header>
+		<article>
+			<span>
+				<table border="1">
+					<tr>
+						<td>사용예</td>
+						<td> %entities% (is|are) in [[the] world[s]] %worlds%
+							<p/>%entities% (is not|isn't|are not|aren't) in [[the] world[s]] %worlds%
+						</td>
+					</tr>
+					<tr>
+						<td>버전</td>
+						<td>1.4</td>
+					</tr>
+				</table>
+			</span>
+			<span>
+				플레이어가 특정 월드에 소속되어 있는지
+			</span>
+		</article>
+		<footer>
+			<p>예시</p>
+			<p>player is in "world"</p>
+			<p>argument isn't in world "world_nether"</p>
+			<p>the attacker is in the world of the victim</p>
+		</footer>
+	</section>
+	<section>
+		<header><h3 id="is online"> Is Online <h3></header>
+		<article>
+			<span>
+				<table border="1">
+					<tr>
+						<td>사용예</td>
+						<td> %entities% (is|are) in [[the] world[s]] %worlds%
+							<p/>%entities% (is not|isn't|are not|aren't) in [[the] world[s]] %worlds%
+						</td>
+					</tr>
+					<tr>
+						<td>버전</td>
+						<td>1.4</td>
+					</tr>
+				</table>
+			</span>
+			<span>
+				플레이어가 온라인인지
+			</span>
+		</article>
+		<footer>
+			<p>예시</p>
+			<p>player is online</p>
+			<p>player-argument is offline</p>
+		</footer>
+	</section>
+	<section>
+		<header><h3 id="is sneaking"> Is Sneaking <h3></header>
+		<article>
+			<span>
+				<table border="1">
+					<tr>
+						<td>사용예</td>
+						<td> %players% (is|are) sneaking
+							<p/>%players% (isn't|is not|aren't|are not) sneaking
+						</td>
+					</tr>
+					<tr>
+						<td>버전</td>
+						<td>1.4.4</td>
+					</tr>
+				</table>
+			</span>
+			<span>
+				플레이어가 웅크리고 있는지
+			</span>
+		</article>
+		<footer>
+			<p>예시</p>
+			<p>on target:</p>
+			<p>&nbsp target is sneaking</p>
+			<p>&nbsp distance of target and the entity is bigger than 4</p>
+			<p>&nbsp cancel the event</p>
+		</footer>
+	</section>
+	<section>
+		<header><h3 id="pvp"> PVP <h3></header>
+		<article>
+			<span>
+				<table border="1">
+					<tr>
+						<td>사용예</td>
+						<td> (is PvP|PvP is) enabled [in %worlds%]
+							<p/>(is PvP|PvP is) disabled [in %worlds%]
+						</td>
+					</tr>
+					<tr>
+						<td>버전</td>
+						<td>1.3.4</td>
+					</tr>
+				</table>
+			</span>
+			<span>
+				서버에서의 PVP허용 설정
+			</span>
+		</article>
+		<footer>
+			<p>예시</p>
+			<p>PvP is enabled</p>
+			<p>PvP is disabled in "world"</p>
+		</footer>
+	</section>
+	<section>
+		<header><h3 id="time"> Time <h3></header>
+		<article>
+			<span>
+				<table border="1">
+					<tr>
+						<td>사용예</td>
+						<td> %date% (was|were)( more|(n't| not) less) than %time span% [ago]
+							<p/>%date% (was|were)((n't| not) more| less) than %time span% [ago]
+						</td>
+					</tr>
+					<tr>
+						<td>버전</td>
+						<td>2.0</td>
+					</tr>
+				</table>
+			</span>
+			<span>
+				서버의 시간
+			</span>
+		</article>
+		<footer>
+			<p>예시</p>
+			<p>command /command_with_cooldown:</p>
+			<p>trigger:</p>
+			<p>&nbsp {command.%player%.lastused} was less than a minute ago:</p>
+			<p>&nbsp &nbsp message "Please wait a minute between uses of this command."</p>
+			<p>&nbsp &nbsp stop</p>
+			<p>set {command.%player%.lastused} to now</p>
+		</footer>
+	</section>
+	
+	
+	<footer class="creater">
+		<p>만든사람 1961035 이규석</p>
+		<a href="#top" class="top"> 맨 위로 </a>
+	</footer>
+</body>
